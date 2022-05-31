@@ -6,6 +6,7 @@
     "UiPath.Excel.Activities": "[2.9.5]",
     "UiPath.IntelligentOCR.Activities": "[6.0.1]",
     "UiPath.Mail.Activities": "[1.9.5]",
+    "UiPath.OCR.Activities": "[3.6.2]",
     "UiPath.System.Activities": "[20.10.4]",
     "UiPath.UIAutomation.Activities": "[20.10.9]"
   },
