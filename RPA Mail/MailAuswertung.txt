@@ -1,0 +1,2 @@
+Stuhl: 2
+Rolle: 3
