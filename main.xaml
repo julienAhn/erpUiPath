@@ -1,0 +1,581 @@
+<Activity mc:Ignorable="sap sap2010" x:Class="Main" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:mva="clr-namespace:Microsoft.VisualBasic.Activities;assembly=System.Activities" xmlns:s="clr-namespace:System;assembly=mscorlib" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib" xmlns:sd="clr-namespace:System.Data;assembly=System.Data" xmlns:snm="clr-namespace:System.Net.Mail;assembly=System" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <x:Members>
+    <x:Property Name="ausg" Type="OutArgument(x:String)" />
+  </x:Members>
+  <mva:VisualBasic.Settings>
+    <x:Null />
+  </mva:VisualBasic.Settings>
+  <sap:VirtualizedContainerService.HintSize>2638,8705</sap:VirtualizedContainerService.HintSize>
+  <sap2010:WorkflowViewState.IdRef>ActivityBuilder_1</sap2010:WorkflowViewState.IdRef>
+  <TextExpression.NamespacesForImplementation>
+    <scg:List x:TypeArguments="x:String" Capacity="74">
+      <x:String>System.Activities</x:String>
+      <x:String>System.Activities.Statements</x:String>
+      <x:String>System.Activities.Expressions</x:String>
+      <x:String>System.Activities.Validation</x:String>
+      <x:String>System.Activities.XamlIntegration</x:String>
+      <x:String>Microsoft.VisualBasic</x:String>
+      <x:String>Microsoft.VisualBasic.Activities</x:String>
+      <x:String>System</x:String>
+      <x:String>System.Collections</x:String>
+      <x:String>System.Collections.Generic</x:String>
+      <x:String>System.Data</x:String>
+      <x:String>System.Diagnostics</x:String>
+      <x:String>System.Drawing</x:String>
+      <x:String>System.IO</x:String>
+      <x:String>System.Linq</x:String>
+      <x:String>System.Net.Mail</x:String>
+      <x:String>System.Xml</x:String>
+      <x:String>System.Xml.Linq</x:String>
+      <x:String>UiPath.Core</x:String>
+      <x:String>UiPath.Core.Activities</x:String>
+      <x:String>System.Windows.Markup</x:String>
+      <x:String>System.Security</x:String>
+      <x:String>UiPath.Mail</x:String>
+      <x:String>UiPath.Mail.IMAP.Activities</x:String>
+      <x:String>UiPath.Mail.Activities</x:String>
+      <x:String>System.Collections.ObjectModel</x:String>
+      <x:String>System.Activities.DynamicUpdate</x:String>
+      <x:String>System.Reflection</x:String>
+      <x:String>System.Runtime.InteropServices</x:String>
+      <x:String>UiPath.Mail.Outlook.Activities</x:String>
+      <x:String>UiPath.Mail.POP3.Activities</x:String>
+      <x:String>UiPath.Shared.Activities</x:String>
+      <x:String>System.Runtime.Serialization</x:String>
+      <x:String>System.Management.Automation</x:String>
+      <x:String>System.Dynamic</x:String>
+      <x:String>Microsoft.Exchange.WebServices.Data</x:String>
+      <x:String>UiPath.Mail.Exchange.Activities</x:String>
+      <x:String>UiPath.Shared.Activities.Business</x:String>
+      <x:String>UiPath.Excel</x:String>
+      <x:String>UiPath.Excel.Activities</x:String>
+      <x:String>System.ComponentModel</x:String>
+      <x:String>System.Xml.Serialization</x:String>
+      <x:String>Microsoft.VisualBasic.CompilerServices</x:String>
+    </scg:List>
+  </TextExpression.NamespacesForImplementation>
+  <TextExpression.ReferencesForImplementation>
+    <scg:List x:TypeArguments="AssemblyReference" Capacity="60">
+      <AssemblyReference>System.Activities</AssemblyReference>
+      <AssemblyReference>Microsoft.VisualBasic</AssemblyReference>
+      <AssemblyReference>mscorlib</AssemblyReference>
+      <AssemblyReference>System.Data</AssemblyReference>
+      <AssemblyReference>System</AssemblyReference>
+      <AssemblyReference>System.Drawing</AssemblyReference>
+      <AssemblyReference>System.Core</AssemblyReference>
+      <AssemblyReference>System.Xml</AssemblyReference>
+      <AssemblyReference>System.Xml.Linq</AssemblyReference>
+      <AssemblyReference>PresentationFramework</AssemblyReference>
+      <AssemblyReference>WindowsBase</AssemblyReference>
+      <AssemblyReference>PresentationCore</AssemblyReference>
+      <AssemblyReference>System.Xaml</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.UiAutomation.Activities</AssemblyReference>
+      <AssemblyReference>System.Data.DataSetExtensions</AssemblyReference>
+      <AssemblyReference>UiPath.Mail.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Mail</AssemblyReference>
+      <AssemblyReference>UiPath.Mail.Activities.Design</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities.Design</AssemblyReference>
+      <AssemblyReference>System.ValueTuple</AssemblyReference>
+      <AssemblyReference>UiPath.Excel</AssemblyReference>
+      <AssemblyReference>UiPath.OCR.Activities.Design</AssemblyReference>
+      <AssemblyReference>System.Memory</AssemblyReference>
+      <AssemblyReference>Microsoft.Bcl.AsyncInterfaces</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationCore</AssemblyReference>
+      <AssemblyReference>System.ServiceModel</AssemblyReference>
+      <AssemblyReference>System.Runtime.Serialization</AssemblyReference>
+      <AssemblyReference>System.Management.Automation</AssemblyReference>
+      <AssemblyReference>Microsoft.Exchange.WebServices</AssemblyReference>
+      <AssemblyReference>UiPath.OCR.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Excel.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Excel.Activities.Design</AssemblyReference>
+      <AssemblyReference>System.Collections.Immutable</AssemblyReference>
+    </scg:List>
+  </TextExpression.ReferencesForImplementation>
+  <Sequence sap:VirtualizedContainerService.HintSize="2648,8600" sap2010:WorkflowViewState.IdRef="Sequence_5">
+    <Sequence.Variables>
+      <Variable x:TypeArguments="scg:List(snm:MailMessage)" Name="Item" />
+    </Sequence.Variables>
+    <sap:WorkflowViewStateService.ViewState>
+      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+      </scg:Dictionary>
+    </sap:WorkflowViewStateService.ViewState>
+    <ui:GetOutlookMailMessages Filter="{x:Null}" TimeoutMS="{x:Null}" Account="lieferant5@outlook.de" DisplayName="Get Outlook Mail Messages" GetAttachements="False" sap:VirtualizedContainerService.HintSize="2606,22" sap2010:WorkflowViewState.IdRef="GetOutlookMailMessages_1" MailFolder="Posteingang" MarkAsRead="False" Messages="[Item]" OnlyUnreadMessages="True" Top="30" />
+    <ui:ForEach x:TypeArguments="snm:MailMessage" CurrentIndex="{x:Null}" sap2010:Annotation.AnnotationText="Postfach durchlaufen; item = aktuell betrachtete Mail" DisplayName="For Each" sap:VirtualizedContainerService.HintSize="2606,8446" sap2010:WorkflowViewState.IdRef="ForEach`1_2" Values="[Item]">
+      <ui:ForEach.Body>
+        <ActivityAction x:TypeArguments="snm:MailMessage">
+          <ActivityAction.Argument>
+            <DelegateInArgument x:TypeArguments="snm:MailMessage" Name="item" />
+          </ActivityAction.Argument>
+          <Sequence sap:VirtualizedContainerService.HintSize="2570,8280" sap2010:WorkflowViewState.IdRef="Sequence_6">
+            <Sequence.Variables>
+              <Variable x:TypeArguments="x:String" Name="txt" />
+              <Variable x:TypeArguments="sd:DataTable" Name="dtMails" />
+            </Sequence.Variables>
+            <sap:WorkflowViewStateService.ViewState>
+              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+              </scg:Dictionary>
+            </sap:WorkflowViewStateService.ViewState>
+            <ui:ExcelApplicationScope Password="{x:Null}" sap2010:Annotation.AnnotationText="Öffnen der Excel Datei mit den Kunden Mails&#xA;" DisplayName="Excel Application Scope" sap:VirtualizedContainerService.HintSize="2528,8188" sap2010:WorkflowViewState.IdRef="ExcelApplicationScope_3" InstanceCachePeriod="3000" WorkbookPath="C:\Users\Benutzer01\Desktop\RPA Mail\Kundenmails.xlsx">
+              <ui:ExcelApplicationScope.Body>
+                <ActivityAction x:TypeArguments="ui:WorkbookApplication">
+                  <ActivityAction.Argument>
+                    <DelegateInArgument x:TypeArguments="ui:WorkbookApplication" Name="ExcelWorkbookScope" />
+                  </ActivityAction.Argument>
+                  <Sequence DisplayName="Ausführen" sap:VirtualizedContainerService.HintSize="2494,8035" sap2010:WorkflowViewState.IdRef="Sequence_13">
+                    <Sequence.Variables>
+                      <Variable x:TypeArguments="x:String" Name="dtMailString" />
+                    </Sequence.Variables>
+                    <sap:WorkflowViewStateService.ViewState>
+                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                      </scg:Dictionary>
+                    </sap:WorkflowViewStateService.ViewState>
+                    <ui:ExcelReadRange AddHeaders="True" sap2010:Annotation.AnnotationText="Einlesen der Kundenmails als DataTable" DataTable="[dtMails]" DisplayName="Read Range" sap:VirtualizedContainerService.HintSize="2452,90" sap2010:WorkflowViewState.IdRef="ExcelReadRange_2" SheetName="Tabelle1">
+                      <ui:ExcelReadRange.Range>
+                        <InArgument x:TypeArguments="x:String">
+                          <Literal x:TypeArguments="x:String" Value="" />
+                        </InArgument>
+                      </ui:ExcelReadRange.Range>
+                      <sap:WorkflowViewStateService.ViewState>
+                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                          <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+                        </scg:Dictionary>
+                      </sap:WorkflowViewStateService.ViewState>
+                    </ui:ExcelReadRange>
+                    <ui:OutputDataTable sap2010:Annotation.AnnotationText="Datatable der Kundenmails in einen String umwandeln" DataTable="[dtMails]" DisplayName="Output Data Table" sap:VirtualizedContainerService.HintSize="2452,66" sap2010:WorkflowViewState.IdRef="OutputDataTable_1" Text="[dtMailString]">
+                      <sap:WorkflowViewStateService.ViewState>
+                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                          <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+                        </scg:Dictionary>
+                      </sap:WorkflowViewStateService.ViewState>
+                    </ui:OutputDataTable>
+                    <If sap2010:Annotation.AnnotationText="Wenn Senderadresse der aktuell betrachteten Mail in der Kundenmail Tabelle vorhanden ist = eine verifizierte email Adresse; Kann nun weiter bearbeitet werden" Condition="[dtMailString.Contains(item.SenderEmailAddress)]" sap:VirtualizedContainerService.HintSize="2452,7707" sap2010:WorkflowViewState.IdRef="If_3">
+                      <sap:WorkflowViewStateService.ViewState>
+                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                          <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+                        </scg:Dictionary>
+                      </sap:WorkflowViewStateService.ViewState>
+                      <If.Then>
+                        <If sap2010:Annotation.AnnotationText="Besitzt die Mail einen Anhang?" Condition="[item.Attachments.Any]" sap:VirtualizedContainerService.HintSize="2073,7527" sap2010:WorkflowViewState.IdRef="If_4">
+                          <sap:WorkflowViewStateService.ViewState>
+                            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                              <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+                            </scg:Dictionary>
+                          </sap:WorkflowViewStateService.ViewState>
+                          <If.Then>
+                            <Sequence sap:VirtualizedContainerService.HintSize="1602,7347" sap2010:WorkflowViewState.IdRef="Sequence_21">
+                              <Sequence.Variables>
+                                <Variable x:TypeArguments="s:String[]" Name="listOfFiles" />
+                              </Sequence.Variables>
+                              <sap:WorkflowViewStateService.ViewState>
+                                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                </scg:Dictionary>
+                              </sap:WorkflowViewStateService.ViewState>
+                              <ui:SaveMailAttachments Attachments="{x:Null}" sap2010:Annotation.AnnotationText="Anhang Speichern&#xA;" DisplayName="Save Attachments" FolderPath="C:\Users\Benutzer01\Desktop\RPA Mail\Attachments" sap:VirtualizedContainerService.HintSize="1560,131" sap2010:WorkflowViewState.IdRef="SaveMailAttachments_1" Message="[item]">
+                                <sap:WorkflowViewStateService.ViewState>
+                                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                    <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+                                  </scg:Dictionary>
+                                </sap:WorkflowViewStateService.ViewState>
+                              </ui:SaveMailAttachments>
+                              <Assign sap:VirtualizedContainerService.HintSize="1560,60" sap2010:WorkflowViewState.IdRef="Assign_1">
+                                <Assign.To>
+                                  <OutArgument x:TypeArguments="s:String[]">[listOfFiles]</OutArgument>
+                                </Assign.To>
+                                <Assign.Value>
+                                  <InArgument x:TypeArguments="s:String[]">[Directory.GetFiles("C:\Users\Benutzer01\Desktop\RPA Mail\Attachments")]</InArgument>
+                                </Assign.Value>
+                              </Assign>
+                              <ui:ForEach x:TypeArguments="x:Object" CurrentIndex="{x:Null}" DisplayName="For Each" sap:VirtualizedContainerService.HintSize="1560,6984" sap2010:WorkflowViewState.IdRef="ForEach`1_3" Values="[listOfFiles]">
+                                <ui:ForEach.Body>
+                                  <ActivityAction x:TypeArguments="x:Object">
+                                    <ActivityAction.Argument>
+                                      <DelegateInArgument x:TypeArguments="x:Object" Name="files" />
+                                    </ActivityAction.Argument>
+                                    <Sequence DisplayName="Hauptteil" sap:VirtualizedContainerService.HintSize="1524,6850" sap2010:WorkflowViewState.IdRef="Sequence_20">
+                                      <sap:WorkflowViewStateService.ViewState>
+                                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                        </scg:Dictionary>
+                                      </sap:WorkflowViewStateService.ViewState>
+                                      <If sap2010:Annotation.AnnotationText="Anhang Typ Ermitteln&#xA;Pdf oder Excel" Condition="[files.ToString.Substring(files.ToString.Length-3) = &quot;pdf&quot;]" sap:VirtualizedContainerService.HintSize="1482,6758" sap2010:WorkflowViewState.IdRef="If_6">
+                                        <sap:WorkflowViewStateService.ViewState>
+                                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                            <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+                                          </scg:Dictionary>
+                                        </sap:WorkflowViewStateService.ViewState>
+                                        <If.Else>
+                                          <Sequence sap:VirtualizedContainerService.HintSize="1326,6565" sap2010:WorkflowViewState.IdRef="Sequence_35">
+                                            <Sequence.Variables>
+                                              <Variable x:TypeArguments="sd:DataTable" Name="dtBestellungen" />
+                                              <Variable x:TypeArguments="x:String" Name="CellNumberB" />
+                                              <Variable x:TypeArguments="x:String" Name="AdresseF" />
+                                            </Sequence.Variables>
+                                            <sap:WorkflowViewStateService.ViewState>
+                                              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                              </scg:Dictionary>
+                                            </sap:WorkflowViewStateService.ViewState>
+                                            <ui:ExcelApplicationScope Password="{x:Null}" DisplayName="Excel Application Scope" sap:VirtualizedContainerService.HintSize="1284,260" sap2010:WorkflowViewState.IdRef="ExcelApplicationScope_4" InstanceCachePeriod="3000" WorkbookPath="[files.ToString]">
+                                              <ui:ExcelApplicationScope.Body>
+                                                <ActivityAction x:TypeArguments="ui:WorkbookApplication">
+                                                  <ActivityAction.Argument>
+                                                    <DelegateInArgument x:TypeArguments="ui:WorkbookApplication" Name="ExcelWorkbookScope" />
+                                                  </ActivityAction.Argument>
+                                                  <Sequence DisplayName="Ausführen" sap:VirtualizedContainerService.HintSize="376,151" sap2010:WorkflowViewState.IdRef="Sequence_22">
+                                                    <sap:WorkflowViewStateService.ViewState>
+                                                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                                      </scg:Dictionary>
+                                                    </sap:WorkflowViewStateService.ViewState>
+                                                    <ui:ExcelReadRange AddHeaders="True" DataTable="[dtBestellungen]" DisplayName="Read Range" sap:VirtualizedContainerService.HintSize="334,59" sap2010:WorkflowViewState.IdRef="ExcelReadRange_3" SheetName="Tabelle1">
+                                                      <ui:ExcelReadRange.Range>
+                                                        <InArgument x:TypeArguments="x:String">
+                                                          <Literal x:TypeArguments="x:String" Value="" />
+                                                        </InArgument>
+                                                      </ui:ExcelReadRange.Range>
+                                                      <sap:WorkflowViewStateService.ViewState>
+                                                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                                          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                                          <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                                                        </scg:Dictionary>
+                                                      </sap:WorkflowViewStateService.ViewState>
+                                                    </ui:ExcelReadRange>
+                                                  </Sequence>
+                                                </ActivityAction>
+                                              </ui:ExcelApplicationScope.Body>
+                                            </ui:ExcelApplicationScope>
+                                            <ui:ExcelApplicationScope Password="{x:Null}" DisplayName="Excel Application Scope" sap:VirtualizedContainerService.HintSize="1284,415" sap2010:WorkflowViewState.IdRef="ExcelApplicationScope_5" InstanceCachePeriod="3000" WorkbookPath="Tabellen\FehlendeKomponenten.xlsx">
+                                              <ui:ExcelApplicationScope.Body>
+                                                <ActivityAction x:TypeArguments="ui:WorkbookApplication">
+                                                  <ActivityAction.Argument>
+                                                    <DelegateInArgument x:TypeArguments="ui:WorkbookApplication" Name="ExcelWorkbookScope" />
+                                                  </ActivityAction.Argument>
+                                                  <Sequence DisplayName="Ausführen" sap:VirtualizedContainerService.HintSize="376,306" sap2010:WorkflowViewState.IdRef="Sequence_23">
+                                                    <sap:WorkflowViewStateService.ViewState>
+                                                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                                      </scg:Dictionary>
+                                                    </sap:WorkflowViewStateService.ViewState>
+                                                    <ui:ExcelWriteCell Cell="A1" DisplayName="Write Cell" sap:VirtualizedContainerService.HintSize="334,87" sap2010:WorkflowViewState.IdRef="ExcelWriteCell_1" SheetName="Tabelle1" Text="Beschreibung" />
+                                                    <ui:ExcelWriteCell Cell="B1" DisplayName="Write Cell" sap:VirtualizedContainerService.HintSize="334,87" sap2010:WorkflowViewState.IdRef="ExcelWriteCell_2" SheetName="Tabelle1" Text="Fehlende Menge" />
+                                                  </Sequence>
+                                                </ActivityAction>
+                                              </ui:ExcelApplicationScope.Body>
+                                            </ui:ExcelApplicationScope>
+                                            <ui:ExcelApplicationScope Password="{x:Null}" DisplayName="Excel Application Scope" sap:VirtualizedContainerService.HintSize="1284,415" sap2010:WorkflowViewState.IdRef="ExcelApplicationScope_6" InstanceCachePeriod="3000" WorkbookPath="Tabellen\Bestellbestaetigung.xlsx">
+                                              <ui:ExcelApplicationScope.Body>
+                                                <ActivityAction x:TypeArguments="ui:WorkbookApplication">
+                                                  <ActivityAction.Argument>
+                                                    <DelegateInArgument x:TypeArguments="ui:WorkbookApplication" Name="ExcelWorkbookScope" />
+                                                  </ActivityAction.Argument>
+                                                  <Sequence DisplayName="Ausführen" sap:VirtualizedContainerService.HintSize="376,306" sap2010:WorkflowViewState.IdRef="Sequence_24">
+                                                    <sap:WorkflowViewStateService.ViewState>
+                                                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                                      </scg:Dictionary>
+                                                    </sap:WorkflowViewStateService.ViewState>
+                                                    <ui:ExcelWriteCell Cell="A1" DisplayName="Write Cell" sap:VirtualizedContainerService.HintSize="334,87" sap2010:WorkflowViewState.IdRef="ExcelWriteCell_3" SheetName="Tabelle1" Text="Beschreibung" />
+                                                    <ui:ExcelWriteCell Cell="B1" DisplayName="Write Cell" sap:VirtualizedContainerService.HintSize="334,87" sap2010:WorkflowViewState.IdRef="ExcelWriteCell_4" SheetName="Tabelle1" Text="Bestellte Menge" />
+                                                  </Sequence>
+                                                </ActivityAction>
+                                              </ui:ExcelApplicationScope.Body>
+                                            </ui:ExcelApplicationScope>
+                                            <ui:ForEachRow CurrentIndex="{x:Null}" DataTable="[dtBestellungen]" DisplayName="For Each Row" sap:VirtualizedContainerService.HintSize="1284,4567" sap2010:WorkflowViewState.IdRef="ForEachRow_3">
+                                              <ui:ForEachRow.Body>
+                                                <ActivityAction x:TypeArguments="sd:DataRow">
+                                                  <ActivityAction.Argument>
+                                                    <DelegateInArgument x:TypeArguments="sd:DataRow" Name="row" />
+                                                  </ActivityAction.Argument>
+                                                  <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="1234,4419" sap2010:WorkflowViewState.IdRef="Sequence_34">
+                                                    <Sequence.Variables>
+                                                      <Variable x:TypeArguments="x:String" Name="Beschreibung" />
+                                                      <Variable x:TypeArguments="x:Int32" Name="Stückzahl" />
+                                                      <Variable x:TypeArguments="sd:DataTable" Name="dtStückliste1" />
+                                                    </Sequence.Variables>
+                                                    <sap:WorkflowViewStateService.ViewState>
+                                                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                                      </scg:Dictionary>
+                                                    </sap:WorkflowViewStateService.ViewState>
+                                                    <Assign sap:VirtualizedContainerService.HintSize="1192,60" sap2010:WorkflowViewState.IdRef="Assign_2">
+                                                      <Assign.To>
+                                                        <OutArgument x:TypeArguments="x:String">[Beschreibung]</OutArgument>
+                                                      </Assign.To>
+                                                      <Assign.Value>
+                                                        <InArgument x:TypeArguments="x:String">[row(1).ToString]</InArgument>
+                                                      </Assign.Value>
+                                                    </Assign>
+                                                    <Assign sap:VirtualizedContainerService.HintSize="1192,60" sap2010:WorkflowViewState.IdRef="Assign_3">
+                                                      <Assign.To>
+                                                        <OutArgument x:TypeArguments="x:Int32">[Stückzahl]</OutArgument>
+                                                      </Assign.To>
+                                                      <Assign.Value>
+                                                        <InArgument x:TypeArguments="x:Int32">[integer.Parse(row(2).ToString)]</InArgument>
+                                                      </Assign.Value>
+                                                    </Assign>
+                                                    <ui:ExcelApplicationScope Password="{x:Null}" DisplayName="Excel Application Scope" sap:VirtualizedContainerService.HintSize="1192,4127" sap2010:WorkflowViewState.IdRef="ExcelApplicationScope_10" InstanceCachePeriod="3000" WorkbookPath="[&quot;Tabellen\&quot; + Beschreibung + &quot;.xlsx&quot;]">
+                                                      <ui:ExcelApplicationScope.Body>
+                                                        <ActivityAction x:TypeArguments="ui:WorkbookApplication">
+                                                          <ActivityAction.Argument>
+                                                            <DelegateInArgument x:TypeArguments="ui:WorkbookApplication" Name="ExcelWorkbookScope" />
+                                                          </ActivityAction.Argument>
+                                                          <Sequence DisplayName="Ausführen" sap:VirtualizedContainerService.HintSize="1158,4018" sap2010:WorkflowViewState.IdRef="Sequence_33">
+                                                            <Sequence.Variables>
+                                                              <Variable x:TypeArguments="x:String" Name="InitialValue" />
+                                                            </Sequence.Variables>
+                                                            <sap:WorkflowViewStateService.ViewState>
+                                                              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                                                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                                              </scg:Dictionary>
+                                                            </sap:WorkflowViewStateService.ViewState>
+                                                            <ui:ExcelReadRange AddHeaders="True" DataTable="[dtStückliste1]" DisplayName="Read Range" sap:VirtualizedContainerService.HintSize="1116,59" sap2010:WorkflowViewState.IdRef="ExcelReadRange_4" SheetName="Tabelle1">
+                                                              <ui:ExcelReadRange.Range>
+                                                                <InArgument x:TypeArguments="x:String">
+                                                                  <Literal x:TypeArguments="x:String" Value="" />
+                                                                </InArgument>
+                                                              </ui:ExcelReadRange.Range>
+                                                              <sap:WorkflowViewStateService.ViewState>
+                                                                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                                                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                                                  <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                                                                </scg:Dictionary>
+                                                              </sap:WorkflowViewStateService.ViewState>
+                                                            </ui:ExcelReadRange>
+                                                            <ui:ForEachRow CurrentIndex="{x:Null}" DataTable="[dtStückliste1]" DisplayName="For Each Row" sap:VirtualizedContainerService.HintSize="1116,3827" sap2010:WorkflowViewState.IdRef="ForEachRow_2">
+                                                              <ui:ForEachRow.Body>
+                                                                <ActivityAction x:TypeArguments="sd:DataRow">
+                                                                  <ActivityAction.Argument>
+                                                                    <DelegateInArgument x:TypeArguments="sd:DataRow" Name="row" />
+                                                                  </ActivityAction.Argument>
+                                                                  <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="1066,3679" sap2010:WorkflowViewState.IdRef="Sequence_32">
+                                                                    <Sequence.Variables>
+                                                                      <Variable x:TypeArguments="x:String" Name="StücklisteBeschreibung" />
+                                                                      <Variable x:TypeArguments="x:Int32" Name="StücklisteStückzahl" />
+                                                                      <Variable x:TypeArguments="sd:DataTable" Name="dtLager" />
+                                                                      <Variable x:TypeArguments="x:Int32" Name="Produkt" />
+                                                                      <Variable x:TypeArguments="x:String" Name="AdresseB" />
+                                                                      <Variable x:TypeArguments="x:String" Name="CellNumberF" />
+                                                                    </Sequence.Variables>
+                                                                    <sap:WorkflowViewStateService.ViewState>
+                                                                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                                                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                                                      </scg:Dictionary>
+                                                                    </sap:WorkflowViewStateService.ViewState>
+                                                                    <Assign sap:VirtualizedContainerService.HintSize="1024,60" sap2010:WorkflowViewState.IdRef="Assign_4">
+                                                                      <Assign.To>
+                                                                        <OutArgument x:TypeArguments="x:String">[StücklisteBeschreibung]</OutArgument>
+                                                                      </Assign.To>
+                                                                      <Assign.Value>
+                                                                        <InArgument x:TypeArguments="x:String">[row(1).ToString]</InArgument>
+                                                                      </Assign.Value>
+                                                                    </Assign>
+                                                                    <Assign sap:VirtualizedContainerService.HintSize="1024,60" sap2010:WorkflowViewState.IdRef="Assign_5">
+                                                                      <Assign.To>
+                                                                        <OutArgument x:TypeArguments="x:Int32">[StücklisteStückzahl]</OutArgument>
+                                                                      </Assign.To>
+                                                                      <Assign.Value>
+                                                                        <InArgument x:TypeArguments="x:Int32">[integer.Parse(row(2).ToString)]</InArgument>
+                                                                      </Assign.Value>
+                                                                    </Assign>
+                                                                    <Assign sap:VirtualizedContainerService.HintSize="1024,60" sap2010:WorkflowViewState.IdRef="Assign_6">
+                                                                      <Assign.To>
+                                                                        <OutArgument x:TypeArguments="x:Int32">[Produkt]</OutArgument>
+                                                                      </Assign.To>
+                                                                      <Assign.Value>
+                                                                        <InArgument x:TypeArguments="x:Int32">[StücklisteStückzahl * Stückzahl]</InArgument>
+                                                                      </Assign.Value>
+                                                                    </Assign>
+                                                                    <ui:ExcelApplicationScope Password="{x:Null}" DisplayName="Excel Application Scope" sap:VirtualizedContainerService.HintSize="1024,3287" sap2010:WorkflowViewState.IdRef="ExcelApplicationScope_9" InstanceCachePeriod="3000" WorkbookPath="[&quot;Tabellen\Lager&quot; + integer.Parse(row(3).ToString).ToString +&quot;.xlsx&quot;]">
+                                                                      <ui:ExcelApplicationScope.Body>
+                                                                        <ActivityAction x:TypeArguments="ui:WorkbookApplication">
+                                                                          <ActivityAction.Argument>
+                                                                            <DelegateInArgument x:TypeArguments="ui:WorkbookApplication" Name="ExcelWorkbookScope" />
+                                                                          </ActivityAction.Argument>
+                                                                          <Sequence DisplayName="Ausführen" sap:VirtualizedContainerService.HintSize="990,3178" sap2010:WorkflowViewState.IdRef="Sequence_31">
+                                                                            <sap:WorkflowViewStateService.ViewState>
+                                                                              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                                                                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                                                              </scg:Dictionary>
+                                                                            </sap:WorkflowViewStateService.ViewState>
+                                                                            <ui:ExcelReadRange AddHeaders="True" DataTable="[dtLager]" DisplayName="Read Range" sap:VirtualizedContainerService.HintSize="948,59" sap2010:WorkflowViewState.IdRef="ExcelReadRange_5" SheetName="Tabelle1">
+                                                                              <ui:ExcelReadRange.Range>
+                                                                                <InArgument x:TypeArguments="x:String">
+                                                                                  <Literal x:TypeArguments="x:String" Value="" />
+                                                                                </InArgument>
+                                                                              </ui:ExcelReadRange.Range>
+                                                                              <sap:WorkflowViewStateService.ViewState>
+                                                                                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                                                                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                                                                  <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                                                                                </scg:Dictionary>
+                                                                              </sap:WorkflowViewStateService.ViewState>
+                                                                            </ui:ExcelReadRange>
+                                                                            <ui:ForEachRow CurrentIndex="{x:Null}" DataTable="[dtLager]" DisplayName="For Each Row" sap:VirtualizedContainerService.HintSize="948,2987" sap2010:WorkflowViewState.IdRef="ForEachRow_1">
+                                                                              <ui:ForEachRow.Body>
+                                                                                <ActivityAction x:TypeArguments="sd:DataRow">
+                                                                                  <ActivityAction.Argument>
+                                                                                    <DelegateInArgument x:TypeArguments="sd:DataRow" Name="row" />
+                                                                                  </ActivityAction.Argument>
+                                                                                  <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="898,2839" sap2010:WorkflowViewState.IdRef="Sequence_30">
+                                                                                    <sap:WorkflowViewStateService.ViewState>
+                                                                                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                                                                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                                                                      </scg:Dictionary>
+                                                                                    </sap:WorkflowViewStateService.ViewState>
+                                                                                    <If Condition="[row(0).ToString = StücklisteBeschreibung]" sap:VirtualizedContainerService.HintSize="856,2747" sap2010:WorkflowViewState.IdRef="If_8">
+                                                                                      <If.Then>
+                                                                                        <Sequence sap:VirtualizedContainerService.HintSize="700,2598" sap2010:WorkflowViewState.IdRef="Sequence_29">
+                                                                                          <sap:WorkflowViewStateService.ViewState>
+                                                                                            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                                                                              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                                                                            </scg:Dictionary>
+                                                                                          </sap:WorkflowViewStateService.ViewState>
+                                                                                          <If Condition="[integer.Parse(row(1).ToString) - Produkt &lt; 0]" sap:VirtualizedContainerService.HintSize="658,1244" sap2010:WorkflowViewState.IdRef="If_7">
+                                                                                            <If.Then>
+                                                                                              <Sequence sap:VirtualizedContainerService.HintSize="502,1095" sap2010:WorkflowViewState.IdRef="Sequence_26">
+                                                                                                <sap:WorkflowViewStateService.ViewState>
+                                                                                                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                                                                                    <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                                                                                  </scg:Dictionary>
+                                                                                                </sap:WorkflowViewStateService.ViewState>
+                                                                                                <ui:ExcelApplicationScope Password="{x:Null}" DisplayName="Excel Application Scope" sap:VirtualizedContainerService.HintSize="460,655" sap2010:WorkflowViewState.IdRef="ExcelApplicationScope_7" InstanceCachePeriod="3000" WorkbookPath="Tabellen\FehlendeKomponenten.xlsx">
+                                                                                                  <ui:ExcelApplicationScope.Body>
+                                                                                                    <ActivityAction x:TypeArguments="ui:WorkbookApplication">
+                                                                                                      <ActivityAction.Argument>
+                                                                                                        <DelegateInArgument x:TypeArguments="ui:WorkbookApplication" Name="ExcelWorkbookScope" />
+                                                                                                      </ActivityAction.Argument>
+                                                                                                      <Sequence DisplayName="Ausführen" sap:VirtualizedContainerService.HintSize="426,546" sap2010:WorkflowViewState.IdRef="Sequence_25">
+                                                                                                        <sap:WorkflowViewStateService.ViewState>
+                                                                                                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                                                                                            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                                                                                          </scg:Dictionary>
+                                                                                                        </sap:WorkflowViewStateService.ViewState>
+                                                                                                        <ui:ReadTextFile Content="[CellNumberF]" DisplayName="Read Text File" FileName="CellNumberF.txt" sap:VirtualizedContainerService.HintSize="384,80" sap2010:WorkflowViewState.IdRef="ReadTextFile_2" />
+                                                                                                        <ui:ReadTextFile Content="[AdresseF]" DisplayName="Read Text File" FileName="AdresseF.txt" sap:VirtualizedContainerService.HintSize="384,80" sap2010:WorkflowViewState.IdRef="ReadTextFile_3" />
+                                                                                                        <ui:ExcelWriteCell Cell="[CellNumberF]" DisplayName="Write Cell" sap:VirtualizedContainerService.HintSize="384,87" sap2010:WorkflowViewState.IdRef="ExcelWriteCell_5" SheetName="Tabelle1" Text="[row(0).ToString]" />
+                                                                                                        <ui:ExcelWriteCell Cell="[AdresseF]" DisplayName="Write Cell" sap:VirtualizedContainerService.HintSize="384,87" sap2010:WorkflowViewState.IdRef="ExcelWriteCell_6" SheetName="Tabelle1" Text="[(integer.Parse(row(1).ToString) - Produkt).ToString]" />
+                                                                                                      </Sequence>
+                                                                                                    </ActivityAction>
+                                                                                                  </ui:ExcelApplicationScope.Body>
+                                                                                                </ui:ExcelApplicationScope>
+                                                                                                <ui:WriteTextFile DisplayName="Write Text File" FileName="CellNumberF.txt" sap:VirtualizedContainerService.HintSize="460,134" sap2010:WorkflowViewState.IdRef="WriteTextFile_2" Text="[&quot;A&quot; + (integer.Parse(AdresseF.Replace(&quot;B&quot;,&quot;&quot;)) + 1).ToString]" />
+                                                                                                <ui:WriteTextFile DisplayName="Write Text File" FileName="AdresseF.txt" sap:VirtualizedContainerService.HintSize="460,134" sap2010:WorkflowViewState.IdRef="WriteTextFile_3" Text="[&quot;B&quot; + (integer.Parse(AdresseF.Replace(&quot;B&quot;,&quot;&quot;)) + 1).ToString]" />
+                                                                                              </Sequence>
+                                                                                            </If.Then>
+                                                                                          </If>
+                                                                                          <ui:ExcelWriteCell Cell="[AdresseB]" DisplayName="Write Cell" sap:VirtualizedContainerService.HintSize="658,87" sap2010:WorkflowViewState.IdRef="ExcelWriteCell_7" SheetName="Tabelle1" Text="[(integer.Parse(row(1).ToString) - Produkt).ToString]" />
+                                                                                          <Sequence sap:VirtualizedContainerService.HintSize="658,1095" sap2010:WorkflowViewState.IdRef="Sequence_28">
+                                                                                            <sap:WorkflowViewStateService.ViewState>
+                                                                                              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                                                                                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                                                                              </scg:Dictionary>
+                                                                                            </sap:WorkflowViewStateService.ViewState>
+                                                                                            <ui:ReadTextFile Content="[CellNumberB]" DisplayName="Read Text File" FileName="CellNumberB.txt" sap:VirtualizedContainerService.HintSize="434,80" sap2010:WorkflowViewState.IdRef="ReadTextFile_4" />
+                                                                                            <ui:ReadTextFile Content="[AdresseB]" DisplayName="Read Text File" FileName="AdresseB.txt" sap:VirtualizedContainerService.HintSize="434,80" sap2010:WorkflowViewState.IdRef="ReadTextFile_5" />
+                                                                                            <ui:ExcelApplicationScope Password="{x:Null}" DisplayName="Excel Application Scope" sap:VirtualizedContainerService.HintSize="434,415" sap2010:WorkflowViewState.IdRef="ExcelApplicationScope_8" InstanceCachePeriod="3000" WorkbookPath="Tabellen\Bestellbestaetigung.xlsx">
+                                                                                              <ui:ExcelApplicationScope.Body>
+                                                                                                <ActivityAction x:TypeArguments="ui:WorkbookApplication">
+                                                                                                  <ActivityAction.Argument>
+                                                                                                    <DelegateInArgument x:TypeArguments="ui:WorkbookApplication" Name="ExcelWorkbookScope" />
+                                                                                                  </ActivityAction.Argument>
+                                                                                                  <Sequence DisplayName="Ausführen" sap:VirtualizedContainerService.HintSize="376,306" sap2010:WorkflowViewState.IdRef="Sequence_27">
+                                                                                                    <sap:WorkflowViewStateService.ViewState>
+                                                                                                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                                                                                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                                                                                      </scg:Dictionary>
+                                                                                                    </sap:WorkflowViewStateService.ViewState>
+                                                                                                    <ui:ExcelWriteCell Cell="[CellNumberB]" DisplayName="Write Cell" sap:VirtualizedContainerService.HintSize="334,87" sap2010:WorkflowViewState.IdRef="ExcelWriteCell_8" SheetName="Tabelle1" Text="[row(0).ToString]" />
+                                                                                                    <ui:ExcelWriteCell Cell="[AdresseB]" DisplayName="Write Cell" sap:VirtualizedContainerService.HintSize="334,87" sap2010:WorkflowViewState.IdRef="ExcelWriteCell_9" SheetName="Tabelle1" Text="[Produkt.ToString]" />
+                                                                                                  </Sequence>
+                                                                                                </ActivityAction>
+                                                                                              </ui:ExcelApplicationScope.Body>
+                                                                                            </ui:ExcelApplicationScope>
+                                                                                            <ui:WriteTextFile DisplayName="Write Text File" FileName="CellNumberB.txt" sap:VirtualizedContainerService.HintSize="434,134" sap2010:WorkflowViewState.IdRef="WriteTextFile_4" Text="[&quot;A&quot; + (integer.Parse(AdresseB.Replace(&quot;B&quot;,&quot;&quot;)) + 1).ToString]" />
+                                                                                            <ui:WriteTextFile DisplayName="Write Text File" FileName="AdresseB.txt" sap:VirtualizedContainerService.HintSize="434,134" sap2010:WorkflowViewState.IdRef="WriteTextFile_5" Text="[&quot;B&quot; + (integer.Parse(AdresseB.Replace(&quot;B&quot;,&quot;&quot;)) + 1).ToString]" />
+                                                                                          </Sequence>
+                                                                                        </Sequence>
+                                                                                      </If.Then>
+                                                                                    </If>
+                                                                                  </Sequence>
+                                                                                </ActivityAction>
+                                                                              </ui:ForEachRow.Body>
+                                                                            </ui:ForEachRow>
+                                                                          </Sequence>
+                                                                        </ActivityAction>
+                                                                      </ui:ExcelApplicationScope.Body>
+                                                                    </ui:ExcelApplicationScope>
+                                                                  </Sequence>
+                                                                </ActivityAction>
+                                                              </ui:ForEachRow.Body>
+                                                            </ui:ForEachRow>
+                                                          </Sequence>
+                                                        </ActivityAction>
+                                                      </ui:ExcelApplicationScope.Body>
+                                                    </ui:ExcelApplicationScope>
+                                                  </Sequence>
+                                                </ActivityAction>
+                                              </ui:ForEachRow.Body>
+                                            </ui:ForEachRow>
+                                            <ui:WriteTextFile DisplayName="Write Text File" FileName="CellNumberF.txt" sap:VirtualizedContainerService.HintSize="1284,134" sap2010:WorkflowViewState.IdRef="WriteTextFile_6" Text="A2" />
+                                            <ui:WriteTextFile DisplayName="Write Text File" FileName="AdresseF.txt" sap:VirtualizedContainerService.HintSize="1284,134" sap2010:WorkflowViewState.IdRef="WriteTextFile_7" Text="B2" />
+                                            <ui:WriteTextFile DisplayName="Write Text File" FileName="CellNumberB.txt" sap:VirtualizedContainerService.HintSize="1284,134" sap2010:WorkflowViewState.IdRef="WriteTextFile_8" Text="A2" />
+                                            <ui:WriteTextFile DisplayName="Write Text File" FileName="AdresseB.txt" sap:VirtualizedContainerService.HintSize="1284,134" sap2010:WorkflowViewState.IdRef="WriteTextFile_9" Text="B2" />
+                                          </Sequence>
+                                        </If.Else>
+                                      </If>
+                                    </Sequence>
+                                  </ActivityAction>
+                                </ui:ForEach.Body>
+                              </ui:ForEach>
+                            </Sequence>
+                          </If.Then>
+                          <If.Else>
+                            <Sequence sap2010:Annotation.AnnotationText="Email Inhalt wird eingelesen und Analysiert" sap:VirtualizedContainerService.HintSize="426,724" sap2010:WorkflowViewState.IdRef="Sequence_19">
+                              <sap:WorkflowViewStateService.ViewState>
+                                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                  <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+                                </scg:Dictionary>
+                              </sap:WorkflowViewStateService.ViewState>
+                              <ui:WriteTextFile DisplayName="Write Text File" FileName="C:\Users\Benutzer01\Desktop\RPA Mail\MailInhalt.txt" sap:VirtualizedContainerService.HintSize="384,134" sap2010:WorkflowViewState.IdRef="WriteTextFile_1" Text="[item.Body]" />
+                              <ui:StartProcess Arguments="{x:Null}" WorkingDirectory="{x:Null}" DisplayName="Start Process" FileName="C:\Users\Benutzer01\Desktop\RPA Mail\run.bat" sap:VirtualizedContainerService.HintSize="384,87" sap2010:WorkflowViewState.IdRef="StartProcess_3" />
+                              <Delay Duration="00:00:05" sap:VirtualizedContainerService.HintSize="384,22" sap2010:WorkflowViewState.IdRef="Delay_1" />
+                              <ui:ReadTextFile Content="[txt]" DisplayName="Read Text File" Encoding="utf-8" FileName="C:\Users\Benutzer01\Desktop\RPA Mail\MailAuswertung.txt" sap:VirtualizedContainerService.HintSize="384,80" sap2010:WorkflowViewState.IdRef="ReadTextFile_1" />
+                              <ui:ReplyToOutlookMailMessage TimeoutMS="{x:Null}" Body="[&quot;Hallo! Ihre Bestellung ist Eingegangen und wird nun bearbeitet.&lt;br&gt;Bitte bestätigen sie ihre Bestellung: &lt;br&gt;&lt;br&gt;&quot;+txt]" DisplayName="Reply To Outlook Mail Message" sap:VirtualizedContainerService.HintSize="384,118" sap2010:WorkflowViewState.IdRef="ReplyToOutlookMailMessage_2" MailMessage="[item]" ReplyAll="False">
+                                <ui:ReplyToOutlookMailMessage.Files>
+                                  <scg:List x:TypeArguments="InArgument(x:String)" Capacity="0" />
+                                </ui:ReplyToOutlookMailMessage.Files>
+                              </ui:ReplyToOutlookMailMessage>
+                            </Sequence>
+                          </If.Else>
+                        </If>
+                      </If.Then>
+                      <If.Else>
+                        <ui:MessageBox Caption="{x:Null}" ChosenButton="{x:Null}" DisplayName="Message Box" sap:VirtualizedContainerService.HintSize="334,59" sap2010:WorkflowViewState.IdRef="MessageBox_8" Text="[&quot;Nop&quot;]" />
+                      </If.Else>
+                    </If>
+                  </Sequence>
+                </ActivityAction>
+              </ui:ExcelApplicationScope.Body>
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
+            </ui:ExcelApplicationScope>
+          </Sequence>
+        </ActivityAction>
+      </ui:ForEach.Body>
+      <sap:WorkflowViewStateService.ViewState>
+        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+          <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+        </scg:Dictionary>
+      </sap:WorkflowViewStateService.ViewState>
+    </ui:ForEach>
+  </Sequence>
+</Activity>
