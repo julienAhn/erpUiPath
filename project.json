@@ -3,6 +3,7 @@
   "description": "Blank Process",
   "main": "Main.xaml",
   "dependencies": {
+    "UiPath.DocumentUnderstanding.ML.Activities": "[1.13.2]",
     "UiPath.Excel.Activities": "[2.9.5]",
     "UiPath.IntelligentOCR.Activities": "[6.0.1]",
     "UiPath.Mail.Activities": "[1.9.5]",
